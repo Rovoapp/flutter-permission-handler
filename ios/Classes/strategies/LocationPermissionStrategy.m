@@ -51,7 +51,8 @@
         }
     } else if (permission == PermissionGroupLocationAlways) {
         if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"] != nil) {
-            [_locationManager requestAlwaysAuthorization];
+//            [_locationManager requestAlwaysAuthorization];
+            [_locationManager requestWhenInUseAuthorization];
         } else {
             [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"To use location in iOS8 you need to define NSLocationAlwaysUsageDescription in the app bundle's Info.plist file" userInfo:nil] raise];
         }
